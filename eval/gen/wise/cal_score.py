@@ -11,6 +11,16 @@ def calculate_wiscore(consistency, realism, aesthetic_quality):
     return 0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality
 
 
+WISE_CATEGORY_WEIGHTS = {
+    'Cultural': 0.4,
+    'Time': 0.167,
+    'Space': 0.133,
+    'Biology': 0.1,
+    'Physics': 0.1,
+    'Chemistry': 0.1,
+}
+
+
 def cal_culture(file_path):
     all_scores = []
     total_objects = 0
@@ -61,7 +71,7 @@ def cal_space_time(file_path):
                 categories['Space'].append(wiscore)
     
     if has_9_9 or total_objects < 300:
-        print(f"Skipping file {file_path}: Contains 9.9 or has less than 400 objects.")
+        print(f"Skipping file {file_path}: Contains 9.9 or has less than 300 objects.")
         return None
     
     total_scores = {category: sum(scores) for category, scores in categories.items()}
@@ -144,7 +154,7 @@ if __name__ == "__main__":
     )
     avg_score.update(scores)
 
-    avg_all = sum(avg_score.values()) / len(avg_score)
+    avg_all = sum(avg_score[key] * weight for key, weight in WISE_CATEGORY_WEIGHTS.items())
 
     avg_score['Overall'] = avg_all
     keys = ""
