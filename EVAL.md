@@ -65,7 +65,7 @@ We modify the code in [WISE](https://github.com/PKU-YuanGroup/WISE/tree/main) fo
 ## Evaluation
 Directly run `scripts/eval/run_wise.sh` to evaluate WISE. The output will be saved in `$output_path`.
 - Set `$model_path` and `$output_path` for the path for checkpoint and log.
-- Set `$openai_api_key` in `scripts/eval/run_wise.sh` and `your_api_url` in `eval/gen/wise/gpt_eval_mp.py`. The default GPT version is `gpt-4o-2024-11-20`.
+- Set `$openai_api_key` in `scripts/eval/run_wise.sh` and `your_api_url` in `eval/gen/wise/gpt_eval_mp.py`. The default GPT version is `gpt-4o-2024-05-13`.
 - Use `think` for thinking mode.
 
 

@@ -227,7 +227,7 @@ if __name__ == "__main__":
     api_key = openai.api_key
     base_url = "your_api_url",
     api_version = "2024-03-01-preview"
-    model = "gpt-4o-2024-11-20"
+    model = "gpt-4o-2024-05-13"
 
     openai_client = openai.AzureOpenAI(
         azure_endpoint=base_url,

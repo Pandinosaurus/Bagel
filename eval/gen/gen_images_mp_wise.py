@@ -220,10 +220,10 @@ def generate_image(prompt, num_timesteps=50, cfg_scale=4.0, cfg_interval=[0, 1.0
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate images using Bagel model.")
     parser.add_argument("--output_dir", type=str, required=True, help="Directory to save the generated images.")
-    parser.add_argument("--metadata_file", type=str, required=True, help="JSON file containing lines of metadata for each prompt.")
+    parser.add_argument("--metadata-file", type=str, required=True, help="JSON file containing metadata for each prompt.")
     parser.add_argument("--cfg_scale", type=float, default=4)
     parser.add_argument("--resolution", type=int, default=1024)
-    parser.add_argument("--max_latent_size", type=int, default=64)
+    parser.add_argument("--max-latent_size", type=int, default=64)
     parser.add_argument("--think", action="store_true")
     parser.add_argument('--model-path', type=str, default='hf/BAGEL-7B-MoT/')
     args = parser.parse_args()
